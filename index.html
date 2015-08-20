@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="itunes">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="contents/css/bootstrap.min.css" rel="stylesheet">
+    <link href="contents/css/site.css" rel="stylesheet">
+    <link href="contents/css/toastr.css" rel="stylesheet">
+
+
+    <!--Angular module-->
+
+    <script src="vendors/angular/angular.min.js" ></script>
+    <script src="vendors/angular/ui-bootstrap-tpls-0.13.3.min.js" ></script>
+    <script src="vendors/angular/angular-ui-router.js"></script>
+    <script src="vendors/angular/angular-resource.min.js"></script>
+    <script src="vendors/angular/angular-cookies.js"></script>
+    <script src="vendors/angular/ngStorage.min.js"></script>
+    <script src="app/app.js"></script>
+    <!---->
+    <script src="vendors/jquery.min.js"></script>
+    <script src="vendors/toastr.js"></script>
+    <!--Bootstrap js file-->
+
+    <!---->
+    <!--Controllers-->
+    <script src="app/publicList/ListCtrl.js"></script>
+    <script src="app/favoriteList/FavoriteCtrl.js"></script>
+    <script src="app/login/LoginCtrl.js"></script>
+    <!---->
+    <!--Services-->
+    <script src="app/commun/resources.js"></script>
+    <script src="app/commun/identifier.js"></script>
+    <script src="app/commun/notifier.js"></script>
+    <script src="app/publicList/manageList.js"></script>
+    <script src="app/login/manageLogin.js"></script>
+    <script src="app/favoriteList/manageFavorites.js"></script>
+    <!----->
+
+    <title>ITunes Space</title>
+</head>
+<body>
+
+<div  ui-view></div>
+
+<footer></footer>
+</body>
+</html>

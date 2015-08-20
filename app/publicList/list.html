@@ -1,0 +1,60 @@
+<div  >
+    <form class="navbar-form " role="form">
+        <div class="input-group col-md-5">
+            <input ng-model="vm.term" type="text" class="form-control " placeholder="Type any information about your favorite artist" >
+            <span class="input-group-addon glyphicon glyphicon-search" ></span>
+        </div>
+
+            <label for="type" class="label">Type</label>
+            <select class="form-control " id="type" ng-model="vm.type">
+
+                <option ng-repeat="type in vm.types"  selected>{{type}}</option>
+            </select>
+
+
+
+
+
+        <button type="button" ng-click="vm.search()" class="btn btn-primary ">Search</button>
+    </form>
+</div>
+<h2>Results</h2>
+<div id="result" >
+    <accordion >
+        <nav class="navbar navbar-inverse">
+            <span class="navbar-brand col-lg-2">Cover</span>
+            <span class=" navbar-brand col-lg-2">Track</span>
+            <span class=" navbar-brand col-lg-1">Type</span>
+            <span class="navbar-brand col-lg-2">Artist</span>
+            <span class=" navbar-brand col-lg-2">Collection</span>
+            <span class="col-lg-1 navbar-brand">Price</span>
+            <span class="col-lg-2 navbar-brand">Country</span>
+        </nav>
+        <accordion-group heading="{{artist.artistName}}" ng-repeat="artist in vm.artists|orderBy:artistName">
+
+                    <span class="col-lg-2 ">
+
+                        <a href="{{artist.previewUrl}}"><img class="imgCover" ng-src="{{artist.artworkUrl100}}"/></a>
+                         <button ng-if="!vm.manageList.isFavorite(artist.trackId)" class="btn btn-info btn-lg" type="button" ng-click="vm.add(artist)">
+                             Add to <span class="glyphicon glyphicon-star-empty"></span>
+                         </button>
+                        <button ng-if="vm.manageList.isFavorite(artist.trackId)" class="btn btn-warning btn-lg" type="button">
+                            Favoris <span class="glyphicon glyphicon-star"></span>
+                        </button>
+
+                    </span>
+                    <span class="col-lg-2">{{(artist.trackName != null) && artist.trackName || artist.collectionName}}</span>
+                    <span class="col-lg-1">{{artist.kind}}</span>
+                    <span class="col-lg-2">{{artist.artistName}}</span>
+                    <span class="col-lg-2">{{artist.collectionName}}</span>
+                    <span class="col-lg-1">{{artist.trackPrice}}</span>
+                    <span class="col-lg-2">{{artist.country}}</span>
+
+        </accordion-group>
+
+    </accordion>
+    <pagination total-items="vm.pagination.totalItems" ng-model="vm.pagination.currentPage" ng-change="vm.pagination.pageChanged()"></pagination>
+</div>
+
+
+

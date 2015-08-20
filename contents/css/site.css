@@ -1,0 +1,36 @@
+.img-carousel{
+    max-height: 300px;
+
+    min-width: 80%;
+}
+body{
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    background-image: url("../images/bg.jpg");
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.imgCover{
+    width: 120px;
+}
+.btn-lg{
+    width: 120px;
+}
+.label{
+    font-size: 100%;
+    color:#000000;
+}
+h1 {
+    color:#843534;
+}
+.navWelcome{
+
+    font-size:150%;
+}
+h2{
+    color:#843534;
+}
+span{
+    font-size:100%;
+}

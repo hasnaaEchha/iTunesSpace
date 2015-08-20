@@ -1,0 +1,36 @@
+<div id="result" >
+    <accordion >
+        <nav class="navbar navbar-inverse">
+            <span class="navbar-brand col-lg-2">Cover</span>
+            <span class=" navbar-brand col-lg-2">Track</span>
+            <span class=" navbar-brand col-lg-1">Type</span>
+            <span class="navbar-brand col-lg-2">Artist</span>
+            <span class=" navbar-brand col-lg-2">Collection</span>
+            <span class="col-lg-1 navbar-brand">Price</span>
+            <span class="col-lg-2 navbar-brand">Country</span>
+        </nav>
+        <accordion-group heading="{{artist.trackName}}" ng-repeat="artist in vm.artists">
+                    <span class="col-lg-2 ">
+
+                        <a href="{{artist.trackViewUrl}}"><img class="imgCover" ng-src="{{artist.artworkUrl100}}"/></a>
+                         <button ng-if="!vm.manageList.isFavorite(artist.trackId)" class="btn btn-default btn-lg" type="button" ng-click="vm.remove(artist.trackId)">
+                             remove<span class="glyphicon glyphicon-remove"></span>
+                         </button>
+
+
+                    </span>
+            <span class="col-lg-2">{{(artist.trackName != null) && artist.trackName || artist.collectionName}}</span>
+            <span class="col-lg-1">{{artist.kind}}</span>
+            <span class="col-lg-2">{{artist.artistName}}</span>
+            <span class="col-lg-2">{{artist.collectionName}}</span>
+            <span class="col-lg-1">{{artist.trackPrice}}</span>
+            <span class="col-lg-2">{{artist.country}}</span>
+
+        </accordion-group>
+
+    </accordion>
+
+</div>
+
+
+

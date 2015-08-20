@@ -1,0 +1,40 @@
+<header>
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <div id="logo"><a class="btn" href="#"><h1>Your iTunes Space</h1></a></div>
+            <button class="btn navbar-toggle" data-toggle="collapse"  data-target=".navbar-collapse"><span class="glyphicon glyphicon-chevron-down"></span></button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav"><a class=" navWelcome"  ui-sref=".listPublic" >Home</a></li>
+                <li class="nav"><a class="btn navWelcome" ng-if="identity.isAuthenticated()" ui-sref=".favorites" >My Favorites</a></li>
+                <li class="nav"><a class="btn navWelcome" ng-if="!identity.isAuthenticated()"  ui-sref=".login" >LogIn</a></li>
+                <li class="nav" ng-if="identity.isAuthenticated()" ng-click="identity.logout()"><a class="btn navWelcome"   >Logout</a></li>
+
+            </ul>
+        </div>
+
+    </div>
+</header>
+<section class="container">
+    <div class="row visible-md visible-lg">
+        <div style="height: 305px">
+            <carousel interval="myInterval" no-wrap="noWrapSlides">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img class="img-carousel" ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+
+                        <h4>{{slide.text}}</h4>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+
+
+    </div>
+    <div class="jumbotron" id="welcome">
+
+        <div ui-view></div>
+    </div>
+</section>
+<script>$('#theCarousel').carousel();</script>
