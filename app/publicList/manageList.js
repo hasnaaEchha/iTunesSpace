@@ -12,7 +12,7 @@ var types=["movie","music","musicVideo","shortFilm","tvShow","all"];
                 term="a";
             }
             Resources.ItunesSearch.get({term: term, type: type}, function (result) {
-                    console.log(result);
+
                     def.resolve(result);
                 },
                 function (err) {

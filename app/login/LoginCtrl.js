@@ -11,11 +11,10 @@
             '$timeout',
             'manageLogin',
             'notifier',
-
             LoginCtrl]);
     function LoginCtrl($location,$window,$timeout,manageLogin,notifier){
         var vm=this;
-        vm.error=false
+        vm.error=false;
         vm.signIn=function() {
             manageLogin.isClient(vm.userName,vm.password).then(function(result){
                 if(result.success){

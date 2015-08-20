@@ -1,16 +1,13 @@
 /**
  * Created by hassna on 19/08/2015.
  */
-angular.module("itunes").factory("manageFavorites",["Resources","$q","$localStorage","identity",manageFavorites]);
-function manageFavorites(Resources,$q, $localStorage,identity) {
+angular.module("itunes").factory("manageFavorites",["$localStorage",manageFavorites]);
+function manageFavorites( $localStorage) {
 
     return {
 
         add: function (artist) {
             $localStorage.favorites.push(artist);
-            console.log($localStorage.favorites)
-
-
 
         },
         getFavorites:function(){

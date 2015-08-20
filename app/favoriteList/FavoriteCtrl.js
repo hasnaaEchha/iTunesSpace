@@ -13,14 +13,10 @@
 
         var vm=this;
         vm.manageFavorites=manageFavorites;
-
-
         vm.artists=manageFavorites.getFavorites();
-
         vm.remove=function(trackId){
             manageFavorites.remove(trackId);
         }
-
         $scope.status = {
             isFirstOpen: true,
             isFirstDisabled: false
