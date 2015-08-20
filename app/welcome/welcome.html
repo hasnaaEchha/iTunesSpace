@@ -2,14 +2,16 @@
     <div class="navbar navbar-default">
         <div class="navbar-header">
             <div id="logo"><a class="btn" href="#"><h1>Your iTunes Space</h1></a></div>
-            <button class="btn navbar-toggle" data-toggle="collapse"  data-target=".navbar-collapse"><span class="glyphicon glyphicon-chevron-down"></span></button>
+            <button class="btn navbar-toggle" data-toggle="collapse"  data-target=".collapse">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="nav"><a class=" navWelcome"  ui-sref=".listPublic" >Home</a></li>
-                <li class="nav"><a class="btn navWelcome" ng-if="identity.isAuthenticated()" ui-sref=".favorites" >My Favorites</a></li>
-                <li class="nav"><a class="btn navWelcome" ng-if="!identity.isAuthenticated()"  ui-sref=".login" >LogIn</a></li>
-                <li class="nav" ng-if="identity.isAuthenticated()" ng-click="identity.logout()"><a class="btn navWelcome"   >Logout</a></li>
+                <li class="nav"><a class="btn   navWelcome"  ui-sref=".listPublic" >Home</a></li>
+                <li class="nav"><a class="btn  navWelcome" ng-if="identity.isAuthenticated()" ui-sref=".favorites" >My Favorites</a></li>
+                <li class="nav"><a class="btn  navWelcome" ng-if="!identity.isAuthenticated()"  ui-sref=".login" >LogIn</a></li>
+                <li class="nav" ng-if="identity.isAuthenticated()" ng-click="identity.logout()"><a class="nav btn navWelcome"   >Logout</a></li>
 
             </ul>
         </div>
